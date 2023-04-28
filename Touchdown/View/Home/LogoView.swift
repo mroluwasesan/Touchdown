@@ -28,6 +28,8 @@ struct LogoView: View {
   }
 }
 
+
+// MARK: - PREVIEW
 struct LogoView_Previews: PreviewProvider {
   static var previews: some View {
     LogoView()
