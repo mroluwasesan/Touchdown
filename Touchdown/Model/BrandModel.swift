@@ -8,6 +8,6 @@
 import Foundation
 
 struct Brand: Codable, Identifiable {
-  let id: Int
-  let image: String
+    let id: Int
+    let image: String
 }

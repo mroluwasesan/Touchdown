@@ -23,12 +23,13 @@ let colorGray: Color = Color(UIColor.systemGray4)
 let columnSpacing: CGFloat = 10
 let rowSpacing: CGFloat = 10
 var gridLayout: [GridItem] {
-  return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
+    return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
 }
 
 
 // UX
 
+let feedback = UIImpactFeedbackGenerator(style: .medium)
 
 
 // API

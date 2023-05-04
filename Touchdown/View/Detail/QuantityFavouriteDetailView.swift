@@ -15,50 +15,51 @@ struct QuantityFavouriteDetailView: View {
     // MARK: - BODY
     
     var body: some View {
-      HStack(alignment: .center, spacing: 6, content: {
-        Button(action: {
-          if counter > 0 {
+        HStack(alignment: .center, spacing: 6, content: {
+            Button(action: {
+                if counter > 0 {
+                    feedback.impactOccurred()
+                    counter -= 1
+                }
+            }, label: {
+                Image(systemName: "minus.circle")
+            })
             
-            counter -= 1
-          }
-        }, label: {
-          Image(systemName: "minus.circle")
-        })
-        
-        Text("\(counter)")
-          .fontWeight(.semibold)
-          .frame(minWidth: 36)
-        
-        Button(action: {
-          if counter < 100 {
+            Text("\(counter)")
+                .fontWeight(.semibold)
+                .frame(minWidth: 36)
             
-            counter += 1
-          }
-        }, label: {
-          Image(systemName: "plus.circle")
-        })
-        
-        Spacer()
-        
-        Button(action: {
-       
-        }, label: {
-          Image(systemName: "heart.circle")
-            .foregroundColor(.pink)
-        })
-      }) //: HSTACK
-      .font(.system(.title, design: .rounded))
-      .foregroundColor(.black)
-      .imageScale(.large)
+            Button(action: {
+                if counter < 100 {
+                    feedback.impactOccurred()
+                    counter += 1
+                }
+            }, label: {
+                Image(systemName: "plus.circle")
+            })
+            
+            Spacer()
+            
+            Button(action: {
+                feedback.impactOccurred()
+                
+            }, label: {
+                Image(systemName: "heart.circle")
+                    .foregroundColor(.pink)
+            })
+        }) //: HSTACK
+        .font(.system(.title, design: .rounded))
+        .foregroundColor(.black)
+        .imageScale(.large)
     }
-  }
+}
 
-  // MARK: - PREVIEW
+// MARK: - PREVIEW
 
-  struct QuantityFavouriteDetailView_Previews: PreviewProvider {
+struct QuantityFavouriteDetailView_Previews: PreviewProvider {
     static var previews: some View {
-      QuantityFavouriteDetailView()
-        .previewLayout(.sizeThatFits)
-        .padding()
+        QuantityFavouriteDetailView()
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
-  }
+}
